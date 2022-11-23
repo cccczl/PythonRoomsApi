@@ -10,6 +10,4 @@ def paginate_courses_composer():
 
     infra = CoursesRepository()
     use_case = PaginateCoursesCollector(infra)
-    controller = PaginateCoursesCollectorController(use_case)
-
-    return controller
+    return PaginateCoursesCollectorController(use_case)

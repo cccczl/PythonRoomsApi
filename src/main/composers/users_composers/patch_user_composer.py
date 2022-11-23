@@ -8,6 +8,4 @@ def patch_user_composer():
 
     infra = UsersRepository()
     use_case = PatchUserCollector(infra)
-    controller = PatchUserCollectorController(use_case)
-
-    return controller
+    return PatchUserCollectorController(use_case)

@@ -105,7 +105,7 @@ async def test_delete_section_not_found_error():
             db_session=session, section_id=section.id + 1
         )
 
-        assert True is False
+        assert False
     except HttpRequestError as error:
 
         assert error.detail is not None

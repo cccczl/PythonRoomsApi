@@ -28,6 +28,4 @@ class PatchCourseCollectorController(PatchCourseCollectorControllerInterface):
             db_session=db_session, course_id=course_id, course=course
         )
 
-        response = {"status_code": 204, "data": None}
-
-        return response
+        return {"status_code": 204, "data": None}

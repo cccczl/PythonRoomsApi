@@ -24,6 +24,4 @@ class CreateSectionCollectorController(CreateSectionCollectorControllerInterface
 
         await self.__use_case.create_section(db_session=db_session, section=section)
 
-        response = {"status_code": 201, "data": True}
-
-        return response
+        return {"status_code": 201, "data": True}

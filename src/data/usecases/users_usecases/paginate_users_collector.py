@@ -26,6 +26,4 @@ class PaginateUsersCollector(PaginateUsersCollectorInterface):
         :returns - List with all users information
         """
 
-        api_response = await self.__users_repository.get_users(db_session, skip, limit)
-
-        return api_response
+        return await self.__users_repository.get_users(db_session, skip, limit)

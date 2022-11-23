@@ -26,8 +26,4 @@ class PaginateCoursesCollector(PaginateCoursesCollectorInterface):
         :returns - List with all courses information
         """
 
-        api_response = await self.__courses_repository.get_courses(
-            db_session, skip, limit
-        )
-
-        return api_response
+        return await self.__courses_repository.get_courses(db_session, skip, limit)

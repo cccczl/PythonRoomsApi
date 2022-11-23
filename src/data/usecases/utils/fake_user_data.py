@@ -8,7 +8,7 @@ fake = Faker()
 def create_fake_user():
     """Util to create a fake user"""
 
-    user = UserCreate(
+    return UserCreate(
         email="johndoe@test.com",
         role=1,
         first_name=fake.name(),
@@ -17,18 +17,14 @@ def create_fake_user():
         is_active=fake.boolean(),
     )
 
-    return user
-
 
 def patch_fake_user():
     """Util to patch a fake user"""
 
-    user = UserPatch(
+    return UserPatch(
         email="johndoepatch@test.com",
         role=1,
         first_name=fake.name(),
         last_name=fake.name(),
         bio=fake.text(),
     )
-
-    return user

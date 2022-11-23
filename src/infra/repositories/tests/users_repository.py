@@ -37,28 +37,14 @@ class UsersRepositorySpy(UsersRepositoryInterface):
 
         self.get_user_by_id_attributes["user_id"] = user_id
 
-        check_user_exists = None
-
-        for user in self.users:
-            if user.id == user_id:
-                check_user_exists = user
-                break
-
-        return check_user_exists
+        return next((user for user in self.users if user.id == user_id), None)
 
     async def get_user_by_email(self, _: AsyncClient, user_email: str) -> User:
         """Get a user by email test"""
 
         self.get_user_by_email_attributes["user_email"] = user_email
 
-        check_user_exists = None
-
-        for user in self.users:
-            if user.email == user_email:
-                check_user_exists = user
-                break
-
-        return check_user_exists
+        return next((user for user in self.users if user.email == user_email), None)
 
     async def create_db_user(self, _: AsyncClient, user: UserCreate) -> User:
         """Create a user test"""

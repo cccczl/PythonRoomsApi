@@ -12,6 +12,4 @@ def create_section_composer():
     sections_infra = SectionsRepository()
     courses_infra = CoursesRepository()
     use_case = CreateSectionCollector(sections_infra, courses_infra)
-    controller = CreateSectionCollectorController(use_case)
-
-    return controller
+    return CreateSectionCollectorController(use_case)

@@ -56,7 +56,7 @@ async def test_find_user_by_id_not_found_error():
             db_session=session, user_id=user.id + 1
         )
 
-        assert True is False
+        assert False
     except HttpRequestError as error:
 
         assert error.detail is not None

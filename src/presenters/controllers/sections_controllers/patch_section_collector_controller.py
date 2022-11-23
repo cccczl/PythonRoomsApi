@@ -28,6 +28,4 @@ class PatchSectionCollectorController(PatchSectionCollectorControllerInterface):
             db_session=db_session, section_id=section_id, section=section
         )
 
-        response = {"status_code": 204, "data": None}
-
-        return response
+        return {"status_code": 204, "data": None}

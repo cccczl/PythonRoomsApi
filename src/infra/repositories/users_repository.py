@@ -20,9 +20,7 @@ class UsersRepository(UsersRepositoryInterface):
 
         query_response = await db_session.execute(query)
 
-        users = query_response.scalars().all()
-
-        return users
+        return query_response.scalars().all()
 
     async def get_user_by_id(self, db_session: AsyncSession, user_id: int) -> User:
         """Get a user by id"""
@@ -31,9 +29,7 @@ class UsersRepository(UsersRepositoryInterface):
 
         query_response = await db_session.execute(query)
 
-        user = query_response.scalars().first()
-
-        return user
+        return query_response.scalars().first()
 
     async def get_user_by_email(
         self, db_session: AsyncSession, user_email: str
@@ -44,9 +40,7 @@ class UsersRepository(UsersRepositoryInterface):
 
         query_response = await db_session.execute(query)
 
-        user = query_response.scalars().first()
-
-        return user
+        return query_response.scalars().first()
 
     async def create_db_user(self, db_session: AsyncSession, user: UserCreate) -> User:
         """Create a user"""
@@ -68,9 +62,7 @@ class UsersRepository(UsersRepositoryInterface):
 
         await db_session.commit()
 
-        created_user = query_response.fetchone()
-
-        return created_user
+        return query_response.fetchone()
 
     async def patch_db_user(
         self, db_session: AsyncSession, user_id: int, user: UserPatch
@@ -94,9 +86,7 @@ class UsersRepository(UsersRepositoryInterface):
 
         await db_session.commit()
 
-        patched_user = query_response.fetchone()
-
-        return patched_user
+        return query_response.fetchone()
 
     async def delete_db_user(self, db_session: AsyncSession, user_id: int) -> None:
         """Delete a user"""

@@ -39,8 +39,6 @@ class FindUserCoursesCollector(FindUserCoursesCollectorInterface):
         if check_user_exists is None:
             raise HttpRequestError(status_code=404, detail="User not found")
 
-        api_response = await self.__courses_repository.get_user_courses(
+        return await self.__courses_repository.get_user_courses(
             db_session, user_id
         )
-
-        return api_response

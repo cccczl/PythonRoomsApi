@@ -12,6 +12,4 @@ def patch_section_composer():
     sections_infra = SectionsRepository()
     courses_infra = CoursesRepository()
     use_case = PatchSectionCollector(sections_infra, courses_infra)
-    controller = PatchSectionCollectorController(use_case)
-
-    return controller
+    return PatchSectionCollectorController(use_case)

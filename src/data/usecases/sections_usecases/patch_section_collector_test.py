@@ -145,7 +145,7 @@ async def test_patch_section_not_found_error():
             section=patch_fake_section_data,
         )
 
-        assert True is False
+        assert False
     except HttpRequestError as error:
 
         assert error.detail is not None
@@ -198,7 +198,7 @@ async def test_patch_section_course_not_found_error():
             section=patch_fake_section_data,
         )
 
-        assert True is False
+        assert False
     except HttpRequestError as error:
 
         assert error.detail is not None

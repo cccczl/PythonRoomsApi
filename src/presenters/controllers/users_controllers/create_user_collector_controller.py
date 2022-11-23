@@ -24,6 +24,4 @@ class CreateUserCollectorController(CreateUserCollectorControllerInterface):
 
         await self.__use_case.create_user(db_session=db_session, user=user)
 
-        response = {"status_code": 201, "data": True}
-
-        return response
+        return {"status_code": 201, "data": True}

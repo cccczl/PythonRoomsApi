@@ -24,6 +24,4 @@ class CreateCourseCollectorController(CreateCourseCollectorControllerInterface):
 
         await self.__use_case.create_course(db_session=db_session, course=course)
 
-        response = {"status_code": 201, "data": True}
-
-        return response
+        return {"status_code": 201, "data": True}

@@ -81,7 +81,7 @@ async def test_patch_user_not_found_error():
             user=patch_fake_user_data,
         )
 
-        assert True is False
+        assert False
     except HttpRequestError as error:
 
         assert error.detail is not None
@@ -121,7 +121,7 @@ async def test_patch_user_email_already_exists_error():
             user=patch_fake_user_data,
         )
 
-        assert True is False
+        assert False
     except HttpRequestError as error:
 
         assert error.detail is not None
@@ -154,7 +154,7 @@ async def test_patch_user_invalid_email_error():
             user=patch_fake_user_data,
         )
 
-        assert True is False
+        assert False
     except HttpRequestError as error:
 
         assert error.detail is not None

@@ -24,6 +24,4 @@ class PatchUserCollectorController(PatchUserCollectorControllerInterface):
             db_session=db_session, user_id=user_id, user=user
         )
 
-        response = {"status_code": 204, "data": None}
-
-        return response
+        return {"status_code": 204, "data": None}

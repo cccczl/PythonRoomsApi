@@ -28,6 +28,4 @@ class FindSectionsByTitleCollectorController(
             db_session=db_session, sections_title=sections_title
         )
 
-        response = {"status_code": 200, "data": sections}
-
-        return response
+        return {"status_code": 200, "data": sections}

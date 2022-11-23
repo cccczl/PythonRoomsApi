@@ -25,8 +25,6 @@ class FindSectionsByTitleCollector(FindSectionsByTitleCollectorInterface):
         :returns - List with sections information
         """
 
-        api_response = await self.__sections_repository.get_sections_by_title(
+        return await self.__sections_repository.get_sections_by_title(
             db_session, sections_title
         )
-
-        return api_response

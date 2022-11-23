@@ -12,6 +12,4 @@ def paginate_users_composer():
 
     infra = UsersRepository()
     use_case = PaginateUsersCollector(infra)
-    controller = PaginateUsersCollectorController(use_case)
-
-    return controller
+    return PaginateUsersCollectorController(use_case)

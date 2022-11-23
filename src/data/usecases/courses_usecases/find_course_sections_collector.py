@@ -39,8 +39,6 @@ class FindCourseSectionsCollector(FindCourseSectionsCollectorInterface):
         if check_course_exists is None:
             raise HttpRequestError(status_code=404, detail="Course not found")
 
-        api_response = await self.__sections_repository.get_course_sections(
+        return await self.__sections_repository.get_course_sections(
             db_session, course_id
         )
-
-        return api_response

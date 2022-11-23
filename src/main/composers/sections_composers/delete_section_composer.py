@@ -10,6 +10,4 @@ def delete_section_composer():
 
     infra = SectionsRepository()
     use_case = DeleteSectionCollector(infra)
-    controller = DeleteSectionCollectorController(use_case)
-
-    return controller
+    return DeleteSectionCollectorController(use_case)
