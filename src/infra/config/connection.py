@@ -16,9 +16,7 @@ SQLALCHEMY_DATABASE_URL = getenv("DATABASE_URL")
 def create_database_engine(connection_string: str):
     """Create database async engine function"""
 
-    engine = create_async_engine(connection_string)
-
-    return engine
+    return create_async_engine(connection_string)
 
 
 async def get_db() -> AsyncGenerator:

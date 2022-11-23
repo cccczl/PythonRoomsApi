@@ -20,9 +20,7 @@ class SectionsRepository(SectionsRepositoryInterface):
 
         query_response = await db_session.execute(query)
 
-        section = query_response.scalars().first()
-
-        return section
+        return query_response.scalars().first()
 
     async def get_sections_by_title(
         self, db_session: AsyncSession, sections_title: str
@@ -33,9 +31,7 @@ class SectionsRepository(SectionsRepositoryInterface):
 
         query_response = await db_session.execute(query)
 
-        sections = query_response.scalars().all()
-
-        return sections
+        return query_response.scalars().all()
 
     async def get_course_sections(
         self, db_session: AsyncSession, course_id: str
@@ -46,9 +42,7 @@ class SectionsRepository(SectionsRepositoryInterface):
 
         query_response = await db_session.execute(query)
 
-        sections = query_response.scalars().all()
-
-        return sections
+        return query_response.scalars().all()
 
     async def create_db_section(
         self, db_session: AsyncSession, section: SectionCreate
@@ -71,9 +65,7 @@ class SectionsRepository(SectionsRepositoryInterface):
 
         await db_session.commit()
 
-        created_section = query_response.fetchone()
-
-        return created_section
+        return query_response.fetchone()
 
     async def patch_db_section(
         self, db_session: AsyncSession, section_id: int, section: SectionPatch
@@ -96,9 +88,7 @@ class SectionsRepository(SectionsRepositoryInterface):
 
         await db_session.commit()
 
-        patched_section = query_response.fetchone()
-
-        return patched_section
+        return query_response.fetchone()
 
     async def delete_db_section(
         self, db_session: AsyncSession, section_id: int

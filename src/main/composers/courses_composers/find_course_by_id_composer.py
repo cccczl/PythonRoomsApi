@@ -10,6 +10,4 @@ def find_course_by_id_composer():
 
     infra = CoursesRepository()
     use_case = FindCourseByIdCollector(infra)
-    controller = FindCourseByIdCollectorController(use_case)
-
-    return controller
+    return FindCourseByIdCollectorController(use_case)

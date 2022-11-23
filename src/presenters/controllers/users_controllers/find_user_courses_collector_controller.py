@@ -26,6 +26,4 @@ class FindUserCoursesCollectorController(FindUserCoursesCollectorControllerInter
             db_session=db_session, user_id=user_id
         )
 
-        response = {"status_code": 200, "data": user_courses}
-
-        return response
+        return {"status_code": 200, "data": user_courses}

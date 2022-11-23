@@ -77,7 +77,7 @@ async def test_create_course_already_exists_error():
             db_session=session, course=fake_course
         )
 
-        assert True is False
+        assert False
     except HttpRequestError as error:
 
         assert error.detail is not None
@@ -108,7 +108,7 @@ async def test_create_course_user_not_found_error():
             db_session=session, course=fake_course
         )
 
-        assert True is False
+        assert False
     except HttpRequestError as error:
 
         assert error.detail is not None
@@ -141,7 +141,7 @@ async def test_create_course_user_student_role_error():
             db_session=session, course=fake_course
         )
 
-        assert True is False
+        assert False
     except HttpRequestError as error:
 
         assert error.detail is not None

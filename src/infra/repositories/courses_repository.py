@@ -20,9 +20,7 @@ class CoursesRepository(CoursesRepositoryInterface):
 
         query_response = await db_session.execute(query)
 
-        courses = query_response.scalars().all()
-
-        return courses
+        return query_response.scalars().all()
 
     async def get_course_by_id(
         self, db_session: AsyncSession, course_id: int
@@ -33,9 +31,7 @@ class CoursesRepository(CoursesRepositoryInterface):
 
         query_response = await db_session.execute(query)
 
-        course = query_response.scalars().first()
-
-        return course
+        return query_response.scalars().first()
 
     async def get_course_by_title(
         self, db_session: AsyncSession, course_title: str
@@ -46,9 +42,7 @@ class CoursesRepository(CoursesRepositoryInterface):
 
         query_response = await db_session.execute(query)
 
-        course = query_response.scalars().first()
-
-        return course
+        return query_response.scalars().first()
 
     async def get_user_courses(
         self, db_session: AsyncSession, user_id: int
@@ -59,9 +53,7 @@ class CoursesRepository(CoursesRepositoryInterface):
 
         query_response = await db_session.execute(query)
 
-        courses = query_response.scalars().all()
-
-        return courses
+        return query_response.scalars().all()
 
     async def create_db_course(
         self, db_session: AsyncSession, course: CourseCreate
@@ -83,9 +75,7 @@ class CoursesRepository(CoursesRepositoryInterface):
 
         await db_session.commit()
 
-        created_course = query_response.fetchone()
-
-        return created_course
+        return query_response.fetchone()
 
     async def patch_db_course(
         self, db_session: AsyncSession, course_id: int, course: CoursePatch
@@ -107,9 +97,7 @@ class CoursesRepository(CoursesRepositoryInterface):
 
         await db_session.commit()
 
-        patched_course = query_response.fetchone()
-
-        return patched_course
+        return query_response.fetchone()
 
     async def delete_db_course(self, db_session: AsyncSession, course_id: int) -> None:
         """Delete a course"""

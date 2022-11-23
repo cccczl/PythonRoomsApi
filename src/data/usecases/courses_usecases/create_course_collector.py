@@ -51,8 +51,4 @@ class CreateCourseCollector(CreateCourseCollectorInterface):
                 status_code=400, detail="Only a teacher user can create a course!"
             )
 
-        api_response = await self.__courses_repository.create_db_course(
-            db_session, course
-        )
-
-        return api_response
+        return await self.__courses_repository.create_db_course(db_session, course)

@@ -12,6 +12,4 @@ def find_user_courses_composer():
     users_infra = UsersRepository()
     courses_infra = CoursesRepository()
     use_case = FindUserCoursesCollector(users_infra, courses_infra)
-    controller = FindUserCoursesCollectorController(use_case)
-
-    return controller
+    return FindUserCoursesCollectorController(use_case)

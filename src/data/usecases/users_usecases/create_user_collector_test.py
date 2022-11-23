@@ -54,7 +54,7 @@ async def test_create_user_already_exists_error():
 
         await create_user_collector.create_user(db_session=session, user=fake_user)
 
-        assert True is False
+        assert False
     except HttpRequestError as error:
 
         assert error.detail is not None
@@ -77,7 +77,7 @@ async def test_create_user_invalid_email_error():
     try:
         await create_user_collector.create_user(db_session=session, user=fake_user)
 
-        assert True is False
+        assert False
     except HttpRequestError as error:
 
         assert error.detail is not None

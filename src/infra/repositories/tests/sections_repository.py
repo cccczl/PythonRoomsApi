@@ -25,14 +25,10 @@ class SectionsRepositorySpy(SectionsRepositoryInterface):
 
         self.get_section_by_id_attributes["section_id"] = section_id
 
-        check_section_exists = None
-
-        for section in self.sections:
-            if section.id == section_id:
-                check_section_exists = section
-                break
-
-        return check_section_exists
+        return next(
+            (section for section in self.sections if section.id == section_id),
+            None,
+        )
 
     async def get_sections_by_title(
         self, _: AsyncClient, sections_title: str
@@ -41,13 +37,9 @@ class SectionsRepositorySpy(SectionsRepositoryInterface):
 
         self.get_sections_by_title_attributes["sections_title"] = sections_title
 
-        sections = []
-
-        for section in self.sections:
-            if section.title == sections_title:
-                sections.append(section)
-
-        return sections
+        return [
+            section for section in self.sections if section.title == sections_title
+        ]
 
     async def get_course_sections(
         self, _: AsyncClient, course_id: str
@@ -56,13 +48,7 @@ class SectionsRepositorySpy(SectionsRepositoryInterface):
 
         self.get_course_sections_attributes["course_id"] = course_id
 
-        courses_sections = []
-
-        for section in self.sections:
-            if section.course_id == course_id:
-                courses_sections.append(section)
-
-        return courses_sections
+        return [section for section in self.sections if section.course_id == course_id]
 
     async def create_db_section(
         self, _: AsyncClient, section: SectionCreate

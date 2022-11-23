@@ -39,6 +39,4 @@ class CreateUserCollector(CreateUserCollectorInterface):
                 status_code=422, detail="The email address is not valid!"
             ) from error
 
-        api_response = await self.__users_repository.create_db_user(db_session, user)
-
-        return api_response
+        return await self.__users_repository.create_db_user(db_session, user)

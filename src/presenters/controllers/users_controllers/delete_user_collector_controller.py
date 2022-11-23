@@ -23,6 +23,4 @@ class DeleteUserCollectorController(DeleteUserCollectorControllerInterface):
 
         await self.__use_case.delete_user(db_session=db_session, user_id=user_id)
 
-        response = {"status_code": 204, "data": None}
-
-        return response
+        return {"status_code": 204, "data": None}

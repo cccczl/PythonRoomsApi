@@ -8,6 +8,4 @@ def create_user_composer():
 
     infra = UsersRepository()
     use_case = CreateUserCollector(infra)
-    controller = CreateUserCollectorController(use_case)
-
-    return controller
+    return CreateUserCollectorController(use_case)

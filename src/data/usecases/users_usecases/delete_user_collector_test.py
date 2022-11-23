@@ -53,7 +53,7 @@ async def test_delete_user_not_found_error():
     try:
         await delete_user_collector.delete_user(db_session=session, user_id=user.id + 1)
 
-        assert True is False
+        assert False
     except HttpRequestError as error:
 
         assert error.detail is not None

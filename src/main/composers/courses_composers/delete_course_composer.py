@@ -10,6 +10,4 @@ def delete_course_composer():
 
     infra = CoursesRepository()
     use_case = DeleteCourseCollector(infra)
-    controller = DeleteCourseCollectorController(use_case)
-
-    return controller
+    return DeleteCourseCollectorController(use_case)

@@ -8,6 +8,4 @@ def delete_user_composer():
 
     infra = UsersRepository()
     use_case = DeleteUserCollector(infra)
-    controller = DeleteUserCollectorController(use_case)
-
-    return controller
+    return DeleteUserCollectorController(use_case)

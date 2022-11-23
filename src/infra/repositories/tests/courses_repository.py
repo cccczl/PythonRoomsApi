@@ -38,41 +38,26 @@ class CoursesRepositorySpy(CoursesRepositoryInterface):
 
         self.get_course_by_id_attributes["course_id"] = course_id
 
-        check_course_exists = None
-
-        for course in self.courses:
-            if course.id == course_id:
-                check_course_exists = course
-                break
-
-        return check_course_exists
+        return next(
+            (course for course in self.courses if course.id == course_id), None
+        )
 
     async def get_course_by_title(self, _: AsyncClient, course_title: str) -> Course:
         """Get a course by title test"""
 
         self.get_course_by_title_attributes["course_title"] = course_title
 
-        check_course_exists = None
-
-        for course in self.courses:
-            if course.title == course_title:
-                check_course_exists = course
-                break
-
-        return check_course_exists
+        return next(
+            (course for course in self.courses if course.title == course_title),
+            None,
+        )
 
     async def get_user_courses(self, _: AsyncClient, user_id: int) -> List[Course]:
         """Get a user's courses test"""
 
         self.get_user_courses_attributes["user_id"] = user_id
 
-        users_courses = []
-
-        for course in self.courses:
-            if course.user_id == user_id:
-                users_courses.append(course)
-
-        return users_courses
+        return [course for course in self.courses if course.user_id == user_id]
 
     async def create_db_course(self, _: AsyncClient, course: CourseCreate) -> Course:
         """Create a course test"""

@@ -25,6 +25,4 @@ class PaginateUsersCollectorController(PaginateUsersCollectorControllerInterface
             db_session=db_session, skip=skip, limit=limit
         )
 
-        response = {"status_code": 200, "data": users_pagination}
-
-        return response
+        return {"status_code": 200, "data": users_pagination}

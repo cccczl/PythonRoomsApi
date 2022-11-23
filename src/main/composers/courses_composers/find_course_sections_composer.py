@@ -12,6 +12,4 @@ def find_course_sections_composer():
     courses_infra = CoursesRepository()
     sections_infra = SectionsRepository()
     use_case = FindCourseSectionsCollector(courses_infra, sections_infra)
-    controller = FindCourseSectionsCollectorController(use_case)
-
-    return controller
+    return FindCourseSectionsCollectorController(use_case)

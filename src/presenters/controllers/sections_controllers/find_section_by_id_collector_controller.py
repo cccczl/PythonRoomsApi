@@ -25,6 +25,4 @@ class FindSectionByIdCollectorController(FindSectionByIdCollectorControllerInter
             db_session=db_session, section_id=section_id
         )
 
-        response = {"status_code": 200, "data": section}
-
-        return response
+        return {"status_code": 200, "data": section}

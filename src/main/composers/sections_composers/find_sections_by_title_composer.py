@@ -10,6 +10,4 @@ def find_sections_by_title_composer():
 
     infra = SectionsRepository()
     use_case = FindSectionsByTitleCollector(infra)
-    controller = FindSectionsByTitleCollectorController(use_case)
-
-    return controller
+    return FindSectionsByTitleCollectorController(use_case)

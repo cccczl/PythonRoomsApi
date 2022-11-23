@@ -12,6 +12,4 @@ def find_user_by_id_composer():
 
     infra = UsersRepository()
     use_case = FindUserByIdCollector(infra)
-    controller = FindUserByIdCollectorController(use_case)
-
-    return controller
+    return FindUserByIdCollectorController(use_case)

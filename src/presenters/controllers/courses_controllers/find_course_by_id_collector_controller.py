@@ -25,6 +25,4 @@ class FindCourseByIdCollectorController(FindCourseByIdCollectorControllerInterfa
             db_session=db_session, course_id=course_id
         )
 
-        response = {"status_code": 200, "data": course}
-
-        return response
+        return {"status_code": 200, "data": course}

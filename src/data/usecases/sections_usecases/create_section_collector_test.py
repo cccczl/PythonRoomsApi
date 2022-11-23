@@ -109,7 +109,7 @@ async def test_create_section_not_found_error():
             db_session=session, section=fake_section
         )
 
-        assert True is False
+        assert False
     except HttpRequestError as error:
 
         assert error.detail is not None

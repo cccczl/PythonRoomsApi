@@ -105,7 +105,7 @@ async def test_patch_course_not_found_error():
             course=patch_fake_course_data,
         )
 
-        assert True is False
+        assert False
     except HttpRequestError as error:
 
         assert error.detail is not None
@@ -151,7 +151,7 @@ async def test_patch_course_name_already_exists_error():
             course=patch_fake_course_data,
         )
 
-        assert True is False
+        assert False
     except HttpRequestError as error:
 
         assert error.detail is not None
@@ -192,7 +192,7 @@ async def test_patch_course_user_not_found_error():
             course=patch_fake_course_data,
         )
 
-        assert True is False
+        assert False
     except HttpRequestError as error:
 
         assert error.detail is not None
@@ -233,7 +233,7 @@ async def test_patch_course_user_student_role_error():
             course=patch_fake_course_data,
         )
 
-        assert True is False
+        assert False
     except HttpRequestError as error:
 
         assert error.detail is not None
